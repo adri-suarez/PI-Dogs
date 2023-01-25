@@ -1,9 +1,9 @@
-const { Router } = require('express');
+const { Router } = require("express");
 
-const dogsRouter = Router()
+const dogsRouter = Router();
 
-dogsRouter.get('/',(req,res)=>{
-    res.send("HOLA BUENAS BIENVENIDO A DOGS")
-})
+dogsRouter.get("/", (req, res) => {
+  res.send("HOLA BUENAS BIENVENIDO A DOGS");
+});
 
-module.exports = dogsRouter
+module.exports = dogsRouter;

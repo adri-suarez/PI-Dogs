@@ -1,5 +1,5 @@
-const { Router } = require('express');
+const { Router } = require("express");
 
-const temperamentsRouter = Router()
+const temperamentsRouter = Router();
 
-module.exports = temperamentsRouter
+module.exports = temperamentsRouter;
