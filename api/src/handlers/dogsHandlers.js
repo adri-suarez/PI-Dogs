@@ -1,33 +1,43 @@
-const axios = require("axios");
+const { Dog } = require("../db");
+
+const getAndFormatData = require("../controllers/info");
 
 const getDogs = async (req, res) => {
-  const { name } = req.query;
-  if (name) {
-    res.json({ "estas buscando el nombre": name });
-  } else {
-    let apiData = await axios.get("https://api.thedogapi.com/v1/breeds");
-    let formatApi = apiData.data.map((dog) => {
-      return {
-        id: dog.id,
-        name: dog.name,
-        weight: dog.weight.metric,
-        height: dog.height.metric,
-        life_span: dog.life_span,
-        temperament: dog.temperament,
-        image: dog.image.url,
-      };
-    });
-    res.status(200).send(formatApi);
+  try {
+    const { name } = req.query;
+    let data = await getAndFormatData();
+    if (name) {
+      let encontro = data.filter((dog) =>
+        dog.name.toLowerCase().includes(name.toLowerCase())
+      );
+      encontro.length
+        ? res.send(encontro)
+        : res.status(400).json({ msg: "dog not found" });
+    } else {
+      res.status(200).send(data);
+    }
+  } catch (error) {
+    console.log(error);
   }
 };
 
-const dogById = (req, res) => {
+const dogById = async (req, res) => {
   const { id } = req.params;
-  res.json({ "perro con id": id });
+  let data = await getAndFormatData();
+  let resp = data.find((e) => e.id == id);
+  res.send(resp);
 };
 
 const postDog = (req, res) => {
-  const { name } = req.body;
+  const { name, height, weight, life_span, temperament, image } = req.body;
+  Dog.create({
+    name: name,
+    height: height,
+    weight: weight,
+    life_span: life_span,
+    temperament: temperament,
+    image: image,
+  });
   res.status(200).json({ "se ha creado el perrito": name });
 };
 
