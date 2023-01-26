@@ -19,7 +19,6 @@ const loadDb = async () => {
           name: e,
         };
       });
-      console.log(createdObjects);
       Temperament.bulkCreate(createdObjects);
     }
   } catch (error) {
