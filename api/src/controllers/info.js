@@ -12,6 +12,7 @@ const getAndFormatData = async () => {
       life_span: dog.life_span,
       temperament: dog.temperament,
       image: dog.image.url,
+      created: false,
     };
   });
   dbData = await Dog.findAll();
