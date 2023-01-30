@@ -1,17 +1,16 @@
-const { Dog } = require("../db");
-
-const getAndFormatData = require("../controllers/info");
+const getAndFormatData = require("../controllers/getAndFormatData");
+const postDogController = require("../controllers/postDogController");
 
 const getDogs = async (req, res) => {
+  const { name } = req.query;
   try {
-    const { name } = req.query;
     let data = await getAndFormatData();
     if (name) {
-      let encontro = data.filter((dog) =>
+      let findByName = data.filter((dog) =>
         dog.name.toLowerCase().includes(name.toLowerCase())
       );
-      encontro.length
-        ? res.send(encontro)
+      findByName.length
+        ? res.send(findByName)
         : res.status(400).json({ msg: "dog not found" });
     } else {
       res.status(200).send(data);
@@ -22,23 +21,33 @@ const getDogs = async (req, res) => {
 };
 
 const dogById = async (req, res) => {
-  const { id } = req.params;
-  let data = await getAndFormatData();
-  let resp = data.find((e) => e.id == id);
-  res.send(resp);
+  try {
+    const { id } = req.params;
+    let data = await getAndFormatData();
+    let resp = data.find((e) => e.id == id);
+    resp
+      ? res.status(200).send(resp)
+      : res.status(400).json({ msg: `no dog with the id: ${id}` });
+  } catch (error) {
+    console.log(error);
+  }
 };
 
-const postDog = (req, res) => {
+const postDog = async (req, res) => {
   const { name, height, weight, life_span, temperament, image } = req.body;
-  Dog.create({
-    name: name,
-    height: height,
-    weight: weight,
-    life_span: life_span,
-    temperament: temperament,
-    image: image,
-  });
-  res.status(200).json({ "se ha creado el perrito": name });
+  try {
+    let newDog = await postDogController(
+      name,
+      height,
+      weight,
+      life_span,
+      temperament,
+      image
+    );
+    responder.msg ? res.status(400).json(newDog) : res.status(200).json(newDog);
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 module.exports = { getDogs, dogById, postDog };
