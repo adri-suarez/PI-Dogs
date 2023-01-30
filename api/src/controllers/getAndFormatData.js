@@ -7,8 +7,8 @@ const getAndFormatData = async () => {
     return {
       id: dog.id,
       name: dog.name,
-      height: dog.height.metric.concat(" cm"),
-      weight: dog.weight.metric.concat(" kg"),
+      height: dog.height.metric.concat("cm"),
+      weight: dog.weight.metric.concat("kg"),
       life_span: dog.life_span,
       temperament: dog.temperament,
       image: dog.image.url,
