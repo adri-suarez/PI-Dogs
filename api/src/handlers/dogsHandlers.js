@@ -44,7 +44,7 @@ const postDog = async (req, res) => {
       temperament,
       image
     );
-    responder.msg ? res.status(400).json(newDog) : res.status(200).json(newDog);
+    newDog.msg ? res.status(400).json(newDog) : res.status(200).json(newDog);
   } catch (error) {
     console.log(error);
   }
