@@ -24,9 +24,9 @@ const dogById = async (req, res) => {
   try {
     const { id } = req.params;
     let data = await getAndFormatData();
-    let resp = data.find((e) => e.id == id);
-    resp
-      ? res.status(200).send(resp)
+    let dogById = data.find((e) => e.id == id);
+    dogById
+      ? res.status(200).send([dogById])
       : res.status(400).json({ msg: `no dog with the id: ${id}` });
   } catch (error) {
     console.log(error);
@@ -34,16 +34,8 @@ const dogById = async (req, res) => {
 };
 
 const postDog = async (req, res) => {
-  const { name, height, weight, life_span, temperament, image } = req.body;
   try {
-    let newDog = await postDogController(
-      name,
-      height,
-      weight,
-      life_span,
-      temperament,
-      image
-    );
+    let newDog = await postDogController(req.body);
     newDog.msg ? res.status(400).json(newDog) : res.status(200).json(newDog);
   } catch (error) {
     console.log(error);
