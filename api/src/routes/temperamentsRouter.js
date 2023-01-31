@@ -1,6 +1,6 @@
-const { Router } = require("express");
+const { getTemps } = require("../handlers/temperamentsHandler");
 
-const { getTemps } = require("../handlers/temperamentsHandlers");
+const { Router } = require("express");
 
 const temperamentsRouter = Router();
 
