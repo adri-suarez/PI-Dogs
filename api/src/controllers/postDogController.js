@@ -1,4 +1,4 @@
-const { Dog } = require("../db");
+const { Dog, Temperament } = require("../db");
 const postValidator = require("../helpers/postValidators");
 
 async function postDogController(
@@ -12,9 +12,11 @@ async function postDogController(
     height: height.concat("cm"),
     weight: weight.concat("kg"),
     life_span: life_span ? life_span.concat(" years") : "unknown",
-    temperament: temperament ? temperament : "unknown",
     image,
   });
+
+  let findTemp = await Temperament.findAll({ where: { id: temperament } })
+  createDog.addTemperament(findTemp)
   return createDog;
 }
 
