@@ -16,6 +16,6 @@ const getAndFormatData = async () => {
     };
   });
   dbData = await Dog.findAll();
-  return [...formatApi, ...dbData];
+  return [...dbData, ...formatApi];
 };
 module.exports = getAndFormatData;

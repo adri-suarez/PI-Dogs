@@ -1,26 +1,21 @@
 const { Dog } = require("../db");
+const postValidator = require("../helpers/postValidators");
 
 async function postDogController(
-  name,
-  height,
-  weight,
-  life_span,
-  temperament,
-  image
+  { name, height, weight, life_span, temperament, image } = req.body
 ) {
-  if (name.length < 3) return { msg: "missing name" };
-  if (!height) return { msg: "missing height" };
-  if (!weight) return { msg: "missing weight" };
+  const validateFields = await postValidator(name, height, weight);
+  if (validateFields) return validateFields;
 
-  let created = await Dog.create({
+  let createDog = await Dog.create({
     name,
-    height,
-    weight,
-    life_span,
-    temperament,
+    height: height.concat("cm"),
+    weight: weight.concat("kg"),
+    life_span: life_span ? life_span.concat(" years") : "unknown",
+    temperament: temperament ? temperament : "unknown",
     image,
   });
-  return created;
+  return createDog;
 }
 
 module.exports = postDogController;
