@@ -21,13 +21,13 @@ const loadDb = async () => {
       });
       Temperament.bulkCreate(createdObjects);
       await Temperament.destroy({
-        where:{
-          name: ""
-        }
-      })
+        where: {
+          name: "",
+        },
+      });
     }
   } catch (error) {
-    console.log(error);
+    res.status(400).json({ error: error.message });
   }
 };
 
