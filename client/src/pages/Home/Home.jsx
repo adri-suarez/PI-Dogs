@@ -1,10 +1,8 @@
-import React from 'react'
-import CardsContainer from '../../components/CardsContainer/CardsContainer'
+import React from "react";
+import CardsContainer from "../../components/CardsContainer/CardsContainer";
 
 function Home() {
-  return (
-    <CardsContainer/>
-  )
+  return <CardsContainer />;
 }
 
-export default Home
+export default Home;
