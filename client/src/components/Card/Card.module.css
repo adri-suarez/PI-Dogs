@@ -1,0 +1,12 @@
+.card {
+  width: fit-content;
+  height: fit-content;
+  gap: 2em;
+  border-radius: 12px;
+  border: solid black;
+}
+
+.card img{
+    max-width: 200px;
+    max-height: 200px;
+}

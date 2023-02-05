@@ -1,0 +1,12 @@
+.landing, body {
+  background-color: bisque;
+}
+
+.landing img{
+    width: 45em;
+}
+
+.landing h3, .landing h3:link, .landing h3:visited{
+  
+    text-decoration: none;
+}
