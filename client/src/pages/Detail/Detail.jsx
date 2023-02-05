@@ -1,8 +1,9 @@
 import React from 'react'
+//import styles from './Detail.module.css'
 
 function Detail() {
   return (
-    <div>Detail</div>
+    <div>This is a dog detail</div>
   )
 }
 

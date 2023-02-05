@@ -1,12 +1,40 @@
-.landing, body {
+body {
   background-color: bisque;
 }
 
-.landing img{
-    width: 45em;
+h1 {
+  margin-bottom: 0px;
 }
 
-.landing h3, .landing h3:link, .landing h3:visited{
-  
-    text-decoration: none;
+hr {
+  border: solid 0.5px;
+}
+
+.logo {
+  width: 40em;
+}
+
+.gif {
+  width: 49%;
+  display: inline;
+}
+
+a {
+  font-size: 25px;
+  font-weight: bold;
+  color: brown;
+  text-decoration: none;
+  font-family: Cochin, Georgia, Times, "Times New Roman", serif;
+  display: block;
+}
+
+a:hover {
+  color: teal;
+  text-shadow: 10px black;
+  transition: 0.5s;
+}
+
+a:active {
+  color: goldenrod;
+  transition: 0s;
 }

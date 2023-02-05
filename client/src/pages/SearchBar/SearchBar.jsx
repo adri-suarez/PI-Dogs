@@ -1,8 +1,9 @@
 import React from 'react'
+import styles from './SearchBar.module.css'
 
 function SearchBar() {
   return (
-    <div>SearchBar</div>
+    <div className={styles.nav}>This is a SearchBar!</div>
   )
 }
 
