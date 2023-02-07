@@ -10,10 +10,10 @@ function App() {
   return (
     <div className="App">
       <Route exact path="/" component={Landing} />
+      <Route exact path="/home" component={SearchBar} />
       <Route exact path="/home" component={Home} />
       <Route exact path="/detail" component={Detail} />
       <Route exact path="/form" component={Form} />
-
     </div>
   );
 }
