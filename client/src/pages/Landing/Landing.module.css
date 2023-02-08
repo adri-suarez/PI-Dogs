@@ -1,5 +1,5 @@
-body {
-  background-color: bisque;
+.landing {
+  align-items: center;
 }
 
 h1 {
@@ -8,6 +8,7 @@ h1 {
 
 hr {
   border: solid 0.5px;
+  margin-bottom: 3rem;
 }
 
 .logo {
@@ -26,6 +27,7 @@ a {
   text-decoration: none;
   font-family: Cochin, Georgia, Times, "Times New Roman", serif;
   display: block;
+  margin-bottom: 3rem;
 }
 
 a:hover {

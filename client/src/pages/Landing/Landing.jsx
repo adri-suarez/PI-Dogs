@@ -7,8 +7,6 @@ import patihueso from "../../assets/images/patihueso.gif";
 function Landing() {
   return (
     <div className={styles.landing}>
-      <img src={patihueso} className={styles.gif} />
-      <img src={patihueso} className={styles.gif} />
       <hr />
       <h1>¡Bienvenido a mi Proyecto Individual!</h1>
       <img className={styles.logo} src={Logo} alt="Logo" />
@@ -16,8 +14,8 @@ function Landing() {
         <a href="/home">Click here to continue</a>
       </Link>
       <hr />
-      <img src={patihueso} className={styles.gif} />
-      <img src={patihueso} className={styles.gif} />
+      <img src={patihueso} className={styles.gif} alt="gif" />
+      <img src={patihueso} className={styles.gif} alt="gif" />
     </div>
   );
 }
