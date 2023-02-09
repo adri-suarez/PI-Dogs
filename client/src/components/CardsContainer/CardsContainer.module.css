@@ -1,10 +1,9 @@
 .container {
+  padding: 0px 25px;
+  margin: 0px 20px;
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   gap: 2em;
-}
-.adog {
-  color: white;
+  list-style-type: none;
 }

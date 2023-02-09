@@ -4,9 +4,19 @@
   gap: 2em;
   border-radius: 12px;
   border: solid black;
+  background-color: #fffddda0;
+  cursor: pointer;
 }
 
-.card img{
-    max-width: 200px;
-    max-height: 200px;
+.card img {
+  max-width: 200px;
+  max-height: 200px;
+}
+
+.card h2 {
+  color: rgba(10, 150, 150, 1);
+  text-shadow: 1px 1px 3px black;
+  text-transform: capitalize;
+  max-width: 200px;
+  font-family: sans-serif;
 }
