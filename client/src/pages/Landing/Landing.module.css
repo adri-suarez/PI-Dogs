@@ -2,41 +2,26 @@
   align-items: center;
 }
 
-h1 {
-  margin-bottom: 0px;
-}
-
-hr {
-  border: solid 0.5px;
-  margin-bottom: 3rem;
-}
-
-.logo {
+.landing .logo {
   width: 40em;
 }
 
-.gif {
-  width: 49%;
-  display: inline;
-}
-
-a {
+.continue {
   font-size: 25px;
   font-weight: bold;
   color: brown;
-  text-decoration: none;
   font-family: Cochin, Georgia, Times, "Times New Roman", serif;
   display: block;
   margin-bottom: 3rem;
 }
 
-a:hover {
+.continue:hover {
   color: teal;
   text-shadow: 10px black;
-  transition: 0.5s;
+  transition: 0.3s;
 }
 
-a:active {
+.continue:active {
   color: goldenrod;
   transition: 0s;
 }
