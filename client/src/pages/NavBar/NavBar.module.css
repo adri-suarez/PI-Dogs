@@ -26,7 +26,7 @@
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
 }
-a:hover {
+.nav a:hover {
   color: burlywood;
   text-decoration: none;
   text-shadow: 0 0 8px rgba(253, 187, 45, 0.7);
