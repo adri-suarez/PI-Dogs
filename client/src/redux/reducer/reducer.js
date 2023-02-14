@@ -16,14 +16,13 @@ const initialState = {
   dogs: [],
   dogDetail: [],
   temperaments: [],
-  dogCreated: [],
   dogFilters: [],
 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_DOGS:
-      return { ...state, dogs: action.payload };
+      return { ...state, dogs: action.payload, dogFilters: action.payload };
     ///////////////////////////////////////////////////
     case GET_TEMPS:
       return { ...state, temperaments: action.payload };
@@ -38,10 +37,97 @@ const reducer = (state = initialState, action) => {
       return { ...state };
     ///////////////////////////////////////////////////
     case CLEAN_STATE:
-      return { ...state, dogs: [] };
+      return { ...state, dogDetail: [] };
     ///////////////////////////////////////////////////
     case FILTER_BY_CREATED:
-      return 
+      let doggies = [...state.dogFilters];
+      const filterIfCreated =
+        action.payload == "created"
+          ? doggies.filter((el) => el.created)
+          : doggies.filter((el) => !el.created);
+
+      return {
+        ...state,
+        dogs: action.payload == "any" ? state.dogFilters : filterIfCreated,
+      };
+    ///////////////////////////////////////////////////
+    case FILTER_BY_TEMP:
+      let alldog = [...state.dogFilters];
+      let filterDogs = [];
+
+      if (action.payload === "any")
+        return { ...state, dogs: alldog, dogFilters: alldog };
+
+      for (var i = 0; i < alldog.length; i++) {
+        let temperaments = alldog[i].temperament;
+
+        if (temperaments.includes(action.payload)) {
+          filterDogs.push(alldog[i]);
+        }
+      }
+
+      if (filterDogs.length === 0) {
+        console.log("no dogs");
+      }
+
+      return {
+        ...state,
+        dogs: filterDogs,
+      };
+
+    ///////////////////////////////////////////////////
+    case ORDER_BY_NAME:
+      const orderDoggies = [...state.dogs];
+      const orderDirection =
+        action.payload === "z-a"
+          ? orderDoggies.sort(function (a, b) {
+              if (a.name > b.name) {
+                return -1;
+              }
+              if (b.name > a.name) {
+                return 1;
+              }
+              return 0;
+            })
+          : orderDoggies.sort(function (a, b) {
+              if (a.name > b.name) {
+                return 1;
+              }
+              if (b.name > a.name) {
+                return -1;
+              }
+              return 0;
+            });
+      return {
+        ...state,
+        dogs: orderDirection,
+      };
+    ///////////////////////////////////////////////////
+    case ORDER_BY_WEIGHT:
+      const dogsToOrder = [...state.dogs];
+      let sorted = [];
+
+      action.payload === "lightest"
+        ? (sorted = dogsToOrder.sort(function (a, b) {
+            if (a.weightMax > b.weightMax) {
+              return 1;
+            }
+            if (b.weightMax > a.weightMax) {
+              return -1;
+            }
+            return 0;
+          }))
+        : (sorted = dogsToOrder.sort(function (a, b) {
+            if (a.weightMax > b.weightMax) {
+              return 1;
+            }
+            if (b.weightMax > a.weightMax) {
+              return -1;
+            }
+            return 0;
+          }));
+      return { ...state, dogs: sorted };
+
     ///////////////////////////////////////////////////
     default:
       return { ...state };
