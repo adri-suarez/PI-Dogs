@@ -1,16 +1,15 @@
 const { Dog, Temperament } = require("../db");
 const { DEFAULT_IMG } = process.env;
 
-async function create_dog(
-  { name, height, weight, life_span, temperament, image } = req.body
+async function create_dog({name, weightMin, weightMax, heightMin, heightMax, life_span, temperament, image} = req.body
 ) {
-  /*   const validateFields = await postValidator(name, height, weight, temperament);
-  if (validateFields) return validateFields; */
-
+  
   let createDog = await Dog.create({
     name,
-    height,
-    weight,
+    weightMin,
+    weightMax,
+    heightMin,
+    heightMax,
     life_span: life_span ? life_span : "Unknown",
     image: image ? image : DEFAULT_IMG,
   });
