@@ -7,8 +7,9 @@ function Landing() {
   return (
     <div className={styles.landing}>
       <img className={styles.logo} src={Logo} alt="Logo" />
+      <span class={styles.dot}></span>
       <Link to="/home">
-        <p className={styles.continue}>Click here to continue</p>
+        <p className={styles.continue}>Click and search Breeds</p>
       </Link>
     </div>
   );

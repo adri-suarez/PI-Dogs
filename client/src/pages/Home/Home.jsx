@@ -1,16 +1,13 @@
 import React from "react";
 import CardsContainer from "../../components/CardsContainer/CardsContainer";
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { getDogs } from "../../redux/actions/actions";
+import styles from "./Home.module.css";
 
 function Home() {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getDogs());
-  }, []);
-
-  return <CardsContainer />;
+  return (
+    <div className={styles.home}>
+      <CardsContainer />
+    </div>
+  );
 }
 
 export default Home;
