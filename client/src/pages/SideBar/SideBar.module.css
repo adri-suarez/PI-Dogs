@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar {
+  position: absolute;
+  width: 200px;
+  height: 80%;
+  background: rgba(32, 21, 0, 0.459);
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+
+.sidebar img {
+  width: 200px;
+}
+
+.orders {
+  margin: 10px;
+}
+
+.filters {
+  margin: 50px;
+}
