@@ -26,7 +26,7 @@ const dogById = async (req, res) => {
     let data = await format_all_data();
     let dogById = data.find((e) => e.id == id);
     dogById
-      ? res.status(200).send([dogById])
+      ? res.status(200).send(dogById)
       : res.status(400).json({ msg: `No dog with the id: ${id}` });
   } catch (error) {
     console.log(error);
