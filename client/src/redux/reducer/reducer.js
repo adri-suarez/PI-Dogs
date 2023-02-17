@@ -132,28 +132,6 @@ const reducer = (state = initialState, action) => {
         ...state,
         dogs: sorted,
       };
-
-    /* action.payload === "lightest"
-        ? (sorted = dogsToOrder.sort(function (a, b) {
-            if (a.weightMax > b.weightMax) {
-              return 1;
-            }
-            if (b.weightMax > a.weightMax) {
-              return -1;
-            }
-            return 0;
-          }))
-        : dogsToOrder.sort(function (a, b) {
-            if (a.weightMax > b.weightMax) {
-              return 1;
-            }
-            if (b.weightMax > a.weightMax) {
-              return -1;
-            }
-            return 0;
-          });
-      return { ...state, dogs: sorted }; */
-
     ///////////////////////////////////////////////////
     default:
       return { ...state };
