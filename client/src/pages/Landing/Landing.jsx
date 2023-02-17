@@ -8,9 +8,11 @@ function Landing() {
     <div className={styles.landing}>
       <img className={styles.logo} src={Logo} alt="Logo" />
       <span class={styles.dot}></span>
+      <div className={styles.continueContainer}>
       <Link to="/home">
-        <p className={styles.continue}>Click and search Breeds</p>
+        <p className={styles.continue}>Explore breeds</p>
       </Link>
+      </div>
     </div>
   );
 }

@@ -3,6 +3,11 @@
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 2rem;
+  margin-left: 150px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .pagination button {
@@ -15,18 +20,18 @@
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.3s ease;
-  background: rgba(255, 228, 196, 0.4);
-  color: brown;
-  border-color: rgba(165, 42, 42, 0.569);
+  background: #581611;
+  color: darkgoldenrod;
+  border-color: rgba(223, 220, 220, 0.569);
 }
 
 .pagination button:hover {
-  box-shadow: 0px 0px 5px brown;
+  box-shadow: 0px 0px 5px darkgoldenrod;
   transition: 0.1s;
 }
 
 .pagination button.active {
   font-weight: 900;
-  background: brown;
-  color: wheat;
+  background: goldenrod;
+  color: white;
 }

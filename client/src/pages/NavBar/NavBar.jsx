@@ -9,7 +9,6 @@ function NavBar() {
       <Link to="/">{"◄🏃"}</Link>
       <Link to="/home">HOME</Link>
       <SearchBar />
-      <Link to="/create">CREATE</Link>
     </div>
   );
 }

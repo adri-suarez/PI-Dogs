@@ -30,7 +30,7 @@ export const getTemps = () => {
     fetch("http://localhost:3001/temperaments")
       .then((res) => res.json())
       .then((data) => dispatch({ type: GET_TEMPS, payload: data }));
-  }; 
+  };
 };
 
 //traer dog by name con axios y then
@@ -38,7 +38,11 @@ export const getByName = (name) => {
   return function (dispatch) {
     axios
       .get(`http://localhost:3001/dogs?name=${name}`)
-      .then((res) => dispatch({ type: DOG_BY_NAME, payload: res.data }));
+      .then(
+        (res) =>
+          dispatch({ type: DOG_BY_NAME, payload: res.data }) +
+          console.log(res.data)
+      );
   };
 };
 

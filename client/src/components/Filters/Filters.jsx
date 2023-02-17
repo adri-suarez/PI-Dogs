@@ -11,7 +11,7 @@ import styles from "./Filters.module.css";
 export default function Filters() {
   const dispatch = useDispatch();
   const temperaments = useSelector((state) => state.temperaments);
-  const [filter, setFilter] = useState("");
+  //const [filter, setFilter] = useState("");
 
   useEffect(() => {
     if (!temperaments.length) {
@@ -31,21 +31,21 @@ export default function Filters() {
 
   const handleTemps = (e) => {
     dispatch(filterByTemps(e.target.value));
-    setFilter(`filter ${e.target.value}`);
+    /* setFilter(`filter ${e.target.value}`); */
   };
   const handleCreated = (e) => {
     dispatch(filterByCreated(e.target.value));
-    setFilter(`filter ${e.target.value}`);
+    /* setFilter(`filter ${e.target.value}`); */
   };
 
   return (
-    <div className={styles.container}>
-      <h4>Filters</h4>
+    <div className={styles.filterContainer}>
+      <h4>filtering</h4>
       <div className={styles.temps}>
         <p>Temperaments</p>
         <select name="temperaments" onChange={handleTemps}>
           <option key={"any"} value="any">
-            Show all
+            All
           </option>
           {temperaments &&
             temperaments.map((e) => {
@@ -61,7 +61,7 @@ export default function Filters() {
       <div className={styles.created}>
         <p>Origin</p>
         <select name="created" onChange={handleCreated}>
-          <option value="any">Any Origin</option>
+          <option value="any">Any</option>
           <option value="created">Created Breeds</option>
           <option value="api">Original Breeds</option>
         </select>

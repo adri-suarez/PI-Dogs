@@ -1,9 +1,12 @@
-* {
+.landing * {
   margin: 0;
   padding: 0;
+  text-align: center;
 }
 
 .logo {
+  left: 37.5%;
+  position: relative;
   margin-top: 2rem;
   width: 30rem;
   background-color: rgba(253, 249, 243, 0.5);
@@ -21,23 +24,20 @@
 
 .continue {
   font-size: 25px;
-  font-weight: bold;
-  color: brown;
-  font-family: Cochin, Georgia, Times, "Times New Roman", serif;
-  display: block;
-  margin-bottom: 3rem;
-  margin-top: 17rem;
-  text-shadow: 0px 0px 20px black;
-  animation: blinker 1.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) infinite;
+  color: rgb(34, 34, 34);
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  text-shadow: 0px 0px 20px rgb(22, 22, 22); /* 
+  animation: blinker 1.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) infinite; */
 }
 @keyframes blinker {
   50% {
-    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0);
   }
 }
 
 .continue:hover {
-  color: teal;
+  color: goldenrod;
   text-shadow: 10px black;
   transition: 0.3s;
 }
@@ -45,4 +45,19 @@
 .continue:active {
   color: goldenrod;
   transition: 0s;
+}
+
+.continueContainer {
+  margin: auto;
+  margin-top: 17rem;
+  width: 20%;
+  border: 3px solid goldenrod;
+  box-shadow: 0px 0px 10px rgb(22, 22, 22);
+  padding: 10px;
+  background-color: rgba(240, 255, 255, 0.199);
+  animation: blinker 1.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) infinite;
+}
+.continueContainer:hover {
+  border: 3px dashed black;
+  transition: 0.3s;
 }

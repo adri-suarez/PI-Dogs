@@ -48,7 +48,10 @@ const reducer = (state = initialState, action) => {
 
       return {
         ...state,
-        dogs: action.payload == "any" ? state.dogFilters : filterIfCreated,
+        dogs:
+          action.payload == "any"
+            ? [...state.dogFilters]
+            : [...filterIfCreated],
       };
     ///////////////////////////////////////////////////
     case FILTER_BY_TEMP:
@@ -72,7 +75,7 @@ const reducer = (state = initialState, action) => {
 
       return {
         ...state,
-        dogs: filterDogs,
+        dogs: [...filterDogs],
       };
 
     ///////////////////////////////////////////////////
@@ -105,9 +108,32 @@ const reducer = (state = initialState, action) => {
     ///////////////////////////////////////////////////
     case ORDER_BY_WEIGHT:
       const dogsToOrder = [...state.dogs];
-      let sorted = [];
+      let sorted =
+        action.payload === "heaviest"
+          ? dogsToOrder.sort(function (a, b) {
+              if (a.weightMax > b.weightMax) {
+                return -1;
+              }
+              if (a.weightMax < b.weightMax) {
+                return 1;
+              }
+              return 0;
+            })
+          : dogsToOrder.sort(function (a, b) {
+              if (a.weightMax > b.weightMax) {
+                return 1;
+              }
+              if (a.weightMax < b.weightMax) {
+                return -1;
+              }
+              return 0;
+            });
+      return {
+        ...state,
+        dogs: sorted,
+      };
 
-      action.payload === "lightest"
+    /* action.payload === "lightest"
         ? (sorted = dogsToOrder.sort(function (a, b) {
             if (a.weightMax > b.weightMax) {
               return 1;
@@ -117,7 +143,7 @@ const reducer = (state = initialState, action) => {
             }
             return 0;
           }))
-        : (sorted = dogsToOrder.sort(function (a, b) {
+        : dogsToOrder.sort(function (a, b) {
             if (a.weightMax > b.weightMax) {
               return 1;
             }
@@ -125,8 +151,8 @@ const reducer = (state = initialState, action) => {
               return -1;
             }
             return 0;
-          }));
-      return { ...state, dogs: sorted };
+          });
+      return { ...state, dogs: sorted }; */
 
     ///////////////////////////////////////////////////
     default:

@@ -1,10 +1,30 @@
-.container {
-  padding: 0px;
-  margin: 0px;
-  font-size: 14px;
-  height: 20px;
+.orderContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
-.container p {
-  margin-right: 5px;
-  margin: 0;
+
+.orderContainer h4 {
+  color: whitesmoke;
+  text-transform: uppercase;
+}
+
+.orderContainer p {
+  color: darkgoldenrod;
+  font-weight: normal;
+  text-shadow: 1px 1px 2px black;
+  margin-top: 8px;
+}
+
+.orderContainer select {
+  width: 100px; 
+  border-radius: 3px;
+  box-shadow: 0px 3px 10px black;
+  border: none;
+  padding: 0 15px 0 5px;
+  color: wheat;
+  background-color: brown;
+  font-size: 14px;
+  cursor: pointer;
 }

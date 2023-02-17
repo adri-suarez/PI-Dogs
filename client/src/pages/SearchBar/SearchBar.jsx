@@ -1,13 +1,36 @@
-import React from 'react'
-import styles from './SearchBar.module.css'
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { getByName } from "../../redux/actions/actions";
+import styles from "./SearchBar.module.css";
 
 function SearchBar() {
+  const dispatch = useDispatch();
+  const [name, setName] = useState("");
+
+  const handleInputChange = (e) => {
+    setName(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(getByName(name));
+  };
+
   return (
     <div className={styles.container}>
-    <input type='text' placeholder='Search a breed' onChange={(e) => console.log(e)} className={styles.input} />
-    <button type='submit' onClick={(e) => console.log(e)} className={styles.button}>🐶🔍</button>
-</div>
-  )
+      <form onSubmit={(e) => handleSubmit(e)}>
+        <input
+          type="text"
+          placeholder="Search a breed"
+          onChange={(e) => handleInputChange(e)}
+          className={styles.input}
+        />
+        <button type="submit" className={styles.button}>
+          🐶🔍
+        </button>
+      </form>
+    </div>
+  );
 }
 
-export default SearchBar
+export default SearchBar;
