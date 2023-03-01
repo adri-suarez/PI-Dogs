@@ -31,6 +31,7 @@ function Form() {
     life_span: "",
     temperament: [],
     image: "",
+    like: "",
   });
 
   function validate(input) {
@@ -63,7 +64,7 @@ function Form() {
       errors.lifespan = "Life span is not real";
     }
     if (input.temperament.length < 1) {
-      errors.missingTemp = "At least one temperament required";
+      errors.missingTemp = "At least one";
     }
     return errors;
   }
@@ -125,8 +126,7 @@ function Form() {
                   );
                 })}
             </select>
-            <p>{selectedTemps.map((e) => e)}</p>
-            {errors.missingTemp && <span>{errors.missingTemp}</span>}
+            <p>{selectedTemps.map((e) => e)}</p>{errors.missingTemp && <span>{errors.missingTemp}</span>}
             <p>Weight min and max</p>
             <input
               className={styles.inputN}
@@ -194,6 +194,13 @@ function Form() {
               value={form.image}
               onChange={handleChange}
             />
+            {/* <p>You like?</p>
+            <input
+              type="text"
+              name="like"
+              value={form.like}
+              onChange={handleChange}
+            /> */}
             <input type="submit" value="CREATE" className={styles.submit} />
           </form>
           {/*         <img src={thug} alt="thug doggy" className={styles.thug} /> */}

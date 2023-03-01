@@ -22,7 +22,8 @@ function Detail() {
     weightMax,
     heightMin,
     heightMax,
-    image,
+    image,/* 
+    like, */
   } = param;
   let img = image ? image : loader;
   return (
@@ -45,7 +46,9 @@ function Detail() {
           {heightMin}cm - {heightMax}cm
         </p>
         <h3>Life Span</h3>
-        <p className={styles.span}>{life_span}</p>
+        <p className={styles.span}>{life_span}</p>{/* 
+        <h3>u like</h3>
+        <p className={styles.span}>{like ? like : "unknown"}</p> */}
       </div>
     </div>
   );
