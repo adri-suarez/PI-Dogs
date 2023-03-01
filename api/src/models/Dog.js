@@ -37,15 +37,15 @@ module.exports = (sequelize) => {
       },
       image: {
         type: DataTypes.STRING,
-        validate: {
-          isUrl: true,
-        },
       },
       created: {
         type: DataTypes.BOOLEAN,
         defaultValue: true,
         allowNull: false,
-      },
+      },/* 
+      like: {
+        type: DataTypes.STRING,
+      }, */
     },
     { timestamps: false }
   );

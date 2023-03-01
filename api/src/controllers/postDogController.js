@@ -1,9 +1,18 @@
 const { Dog, Temperament } = require("../db");
 const { DEFAULT_IMG } = process.env;
 
-async function create_dog({name, weightMin, weightMax, heightMin, heightMax, life_span, temperament, image} = req.body
+async function create_dog(
+  {
+    name,
+    weightMin,
+    weightMax,
+    heightMin,
+    heightMax,
+    life_span,
+    temperament,
+    image,
+  } = req.body
 ) {
-  
   let createDog = await Dog.create({
     name,
     weightMin,
@@ -11,7 +20,8 @@ async function create_dog({name, weightMin, weightMax, heightMin, heightMax, lif
     heightMin,
     heightMax,
     life_span: life_span ? life_span : "Unknown",
-    image: image ? image : DEFAULT_IMG,
+    image: image ? image : DEFAULT_IMG,/* 
+    like, */
   });
 
   let findTemp = await Temperament.findAll({ where: { id: temperament } });

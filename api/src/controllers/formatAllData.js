@@ -24,7 +24,8 @@ const format_all_data = async () => {
       life_span: dog.life_span ? dog.life_span.concat(" years") : "Unknown",
       temperament: dog.temperaments.map((e) => e.name),
       image: dog.image,
-      created: true,
+      created: true,/* 
+      like: dog.like, */
     };
   });
 
