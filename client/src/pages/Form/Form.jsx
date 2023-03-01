@@ -58,7 +58,7 @@ function Form() {
       errors.missingHMax = "Max can't be lower than the min";
     }
     if (
-      (input.life_span != "" && input.life_span < 1) ||
+      (input.life_span !== "" && input.life_span < 1) ||
       input.life_span > 25
     ) {
       errors.lifespan = "Life span is not real";
