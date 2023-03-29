@@ -7,11 +7,9 @@
 
 ### Preview actual:
 
-#### Landing
-![image](https://user-images.githubusercontent.com/107125191/228409528-d91b03d7-fe45-47fd-ba11-e93bb8efbf67.png)
+#### Landing ![image](https://user-images.githubusercontent.com/107125191/228409528-d91b03d7-fe45-47fd-ba11-e93bb8efbf67.png)
 #### Home
-![image](https://user-images.githubusercontent.com/107125191/228409627-4f76af12-da93-4c04-b7b5-2d6ad18b9e23.png)
-#### Breed Detail
+![image](https://user-images.githubusercontent.com/107125191/228409627-4f76af12-da93-4c04-b7b5-2d6ad18b9e23.png)#### Breed Detail
 ![image](https://user-images.githubusercontent.com/107125191/228409800-2d15c3ae-b962-448d-81b5-251fd3d5c0a9.png)
 #### Create form
 ![image](https://user-images.githubusercontent.com/107125191/228409840-aac9f5f4-58e5-443f-9317-7f9b8069720d.png)
