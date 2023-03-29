@@ -1,3 +1,10 @@
+## Objetivos y funcionalidades de la App
+
+- Construcción de una App utlizando React, Redux, Node y Sequelize.
+- Afirmar y conectar los conceptos aprendidos en la carrera.
+- Aprender mejores prácticas.
+- Aprender y practicar el workflow de GIT.
+
 ### Preview actual:
 
 #### Landing
@@ -8,13 +15,6 @@
 ![image](https://user-images.githubusercontent.com/107125191/228409800-2d15c3ae-b962-448d-81b5-251fd3d5c0a9.png)
 #### Create form
 ![image](https://user-images.githubusercontent.com/107125191/228409840-aac9f5f4-58e5-443f-9317-7f9b8069720d.png)
-
-## Objetivos y funcionalidades de la App
-
-- Construcción de una App utlizando React, Redux, Node y Sequelize.
-- Afirmar y conectar los conceptos aprendidos en la carrera.
-- Aprender mejores prácticas.
-- Aprender y practicar el workflow de GIT.
 
 Versiones de dependencias:
 
