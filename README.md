@@ -16,11 +16,10 @@
 - Aprender mejores prácticas.
 - Aprender y practicar el workflow de GIT.
 
-- __Node__: 12.18.3 o mayor
-- __NPM__: 6.14.16 o mayor
-
 Versiones de dependencias:
 
+- __Node__: 12.18.3 o mayor
+- __NPM__: 6.14.16 o mayor
 - __react__: 17.0.1
 - __react-dom__: 17.0.1
 - __react-router-dom__: 5.2.0
