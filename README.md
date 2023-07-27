@@ -1,9 +1,9 @@
 ## Objetivos y funcionalidades de la App
 
 - Construcción de una App utlizando React, Redux, Node y Sequelize.
-- Afirmar y conectar los conceptos aprendidos en la carrera.
+- Afirmar y conectar conceptos.
 - Aprender mejores prácticas.
-- Aprender y practicar el workflow de GIT.
+- Practicar el workflow de GIT.
 
 ### Preview actual:
 
